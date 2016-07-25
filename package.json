@@ -23,5 +23,12 @@
   "bugs": {
     "url": "https://github.com/Sentimentron/dracula-sentiment-node/issues"
   },
-  "homepage": "https://github.com/Sentimentron/dracula-sentiment-node"
+  "homepage": "https://github.com/Sentimentron/dracula-sentiment-node",
+  "dependencies": {
+    "numeric": "^1.2.6"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^2.5.3"
+  }
 }

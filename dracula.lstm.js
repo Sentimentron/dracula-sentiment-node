@@ -1,3 +1,5 @@
+window = module; // Change for node.js
+
 function draculaLSTM(values, prefix, backwards, dims) {
 
   // Basically a 2D version of what's in nn_lstm.py
