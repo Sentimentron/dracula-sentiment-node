@@ -1,0 +1,27 @@
+{
+  "name": "dracula-sentiment",
+  "version": "1.0.0",
+  "description": "A deep sentiment analyser for node.js which uses character embeddings.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Sentimentron/dracula-sentiment-node.git"
+  },
+  "keywords": [
+    "sentiment analysis",
+    "deep learning",
+    "polarity classification",
+    "machine learning",
+    "natural language processing",
+    "NLP"
+  ],
+  "author": "Richard Townsend <richard@sentimentron.co.uk>",
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/Sentimentron/dracula-sentiment-node/issues"
+  },
+  "homepage": "https://github.com/Sentimentron/dracula-sentiment-node"
+}
