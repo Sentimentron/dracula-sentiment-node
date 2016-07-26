@@ -14,10 +14,8 @@ function dracula(content, visualize) {
     if (maxOffset < l) l = maxOffset;
     lengths.push(l);
   }
-  
-  for (var i = embeddings.length; i < 47; i++) {
-    lengths.push(0);
-  }
+ 
+  lengths.push(0); 
   if (visualize) {
     visualizeCharacterEmbeddings(embeddings, lengths);
   }
