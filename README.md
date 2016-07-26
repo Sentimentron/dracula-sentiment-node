@@ -1,6 +1,10 @@
 # dracula-sentiment-node
 
-[Try a live web demo](http://dracula.sentimentron.co.uk/sentiment-demo/).
+<center>
+<img src="http://dracula.sentimentron.co.uk/img/dracula-js.svg" alt="dracula.js" />
+</center>
+
+[Try a live web demo &raquo;](http://dracula.sentimentron.co.uk/sentiment-demo/)
 
 A quick way to get "good enough" sentiment analysis into your applications, this package uses character and word-level embeddings and LSTM networks to decide if a given text is either "positive" or "negative".
 
