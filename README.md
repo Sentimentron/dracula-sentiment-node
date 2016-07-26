@@ -28,7 +28,7 @@ Tests aren't very extensive at present.
 
 ## Contributing
 
-If you encounter any sentences where the classifiction is obviously wrong, open an issue and we'll work out a way to extend Dracula's training data so that it doesn't happen. Contributions to clean up the code and improve its style and performance are certainly welcome! 
+If you encounter any sentences where the classification is obviously wrong, open an issue and we'll work out a way to extend Dracula's training data so that it doesn't happen. Contributions to clean up the code and improve its style and performance are certainly welcome! 
 
 ## Release
 * 1.0.0 Original release
