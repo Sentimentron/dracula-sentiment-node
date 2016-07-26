@@ -10,15 +10,17 @@
  */
 
 var fs = require('fs');
+var path = require('path');
 // Dirty include format to keep the node.js version as 
 // similar to the browser version as possible.
 var numeric = require('numeric');
-eval(fs.readFileSync('dracula.params.js')+'');
-eval(fs.readFileSync('dracula.embeddings.js')+'');
-eval(fs.readFileSync('dracula.lstm.js')+'');
-eval(fs.readFileSync('dracula.softmax.js')+'');
-eval(fs.readFileSync('dracula.tokenize.js')+'');
-eval(fs.readFileSync('dracula.js')+'');
+
+eval(fs.readFileSync(path.join(__dirname, 'dracula.params.js'))+'');
+eval(fs.readFileSync(path.join(__dirname, 'dracula.embeddings.js'))+'');
+eval(fs.readFileSync(path.join(__dirname, 'dracula.lstm.js'))+'');
+eval(fs.readFileSync(path.join(__dirname, 'dracula.softmax.js'))+'');
+eval(fs.readFileSync(path.join(__dirname, 'dracula.tokenize.js'))+'');
+eval(fs.readFileSync(path.join(__dirname, 'dracula.js'))+'');
 
  module.exports = {
     analyze: function(string) {
