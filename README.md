@@ -1,7 +1,7 @@
 # dracula-sentiment-node
 
 <center>
-<img src="http://dracula.sentimentron.co.uk/img/dracula-js.svg" alt="dracula.js" />
+<img src="http://dracula.sentimentron.co.uk/img/dracula-js.svg" alt="dracula.js" /> <br />
 <img src="https://travis-ci.org/Sentimentron/dracula-sentiment-node.png?branch=master" style="max-width:100%;" />
 </center>
 
