@@ -24,6 +24,6 @@ eval(fs.readFileSync(path.join(__dirname, 'dracula.js'))+'');
 
  module.exports = {
     analyze: function(string) {
-        return dracula(string, false);
+        return dracula(string);
     }
 }

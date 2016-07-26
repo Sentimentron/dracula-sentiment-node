@@ -1,5 +1,5 @@
 // This is the core function, used by everything
-function dracula(content, visualize) {
+function dracula(content) {
   // Tokenize
   var tokens = draculaTokenize(content);
   // Create embeddings
@@ -16,9 +16,6 @@ function dracula(content, visualize) {
   }
  
   lengths.push(0); 
-  if (visualize) {
-    visualizeCharacterEmbeddings(embeddings, lengths);
-  }
 
   // First-level LSTMs
   var lstmOutput1 = [];
@@ -26,10 +23,6 @@ function dracula(content, visualize) {
     var cur = embeddings[i];
     var out1 = draculaBLSTM(cur, 'lstm_chars_1', 32);
     lstmOutput1.push(out1);
-  }
-
-  if (visualize) {
-    visualizeLSTMCharsActivation(lstmOutput1, 1, lengths);
   }
 
   var lstmOutput = lstmOutput1;
@@ -55,17 +48,11 @@ function dracula(content, visualize) {
     meanOutput.push(poolOut);
   }
 
-  if (visualize) {
-    visualize2DActivation(meanOutput, "mma-pooling-plot", "Min-Max-Average pooling");
-  }
-
   // Word-level LSTMs
   var lstmWords = meanOutput;
   for (var i = 1; i <= 1; i++) {
     var prefix = 'lstm_words_' + i;
     lstmWords = draculaBLSTM(lstmWords, prefix, 96);
-    if (visualize)
-      visualize2DActivation(lstmWords, "lstm-words-"+i, "Word-level LSTM")
   }
 
   var finalPool = [];
@@ -76,15 +63,9 @@ function dracula(content, visualize) {
     finalPool = numeric.add(finalPool, lstmWords[i]);
   }
   finalPool = numeric.div(finalPool, lstmWords.length)
-  if (visualize) {
-    visualize2DActivation([finalPool], "mean-pooling-plot", "Mean-pooling");
-  }
 
   // Output
   var probs = draculaSoftmax([finalPool]);
-  if (visualize) {
-    visualize2DActivation(probs, "probs-plot", "Softmax");
-  }
   output = determineLabels(probs);
   return output.join(', ');
 }
