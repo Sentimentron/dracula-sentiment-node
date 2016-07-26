@@ -5,9 +5,9 @@ function draculaLSTM(values, prefix, backwards, dims) {
   // Basically a 2D version of what's in nn_lstm.py
 
   prefix = 'draculaParams_'+prefix;
-  var U = window[prefix+'_U'];
-  var W = window[prefix+'_W'];
-  var b = window[prefix+'_b'];
+  var U = eval(prefix+'_U');
+  var W = eval(prefix+'_W');
+  var b = eval(prefix+'_b');
 
   var sigmoid = function(t) {
     return numeric.div(1,
@@ -41,8 +41,11 @@ function draculaLSTM(values, prefix, backwards, dims) {
     stateBelow[i] = numeric.add(stateBelow[i], b)
   }
 
-  var h_ = new Array(dims).fill(0);
-  var c_ = new Array(dims).fill(0);
+  var h_ = [];
+  var c_ = [];
+  for (var i = 0; i < dims; i++) {
+    h_.push(0); c_.push(0);
+  }
   var ret = [];
 
   var tokens = [];

@@ -14,13 +14,14 @@ var fs = require('fs');
 // similar to the browser version as possible.
 var numeric = require('numeric');
 eval(fs.readFileSync('dracula.params.js')+'');
+eval(fs.readFileSync('dracula.embeddings.js')+'');
 eval(fs.readFileSync('dracula.lstm.js')+'');
 eval(fs.readFileSync('dracula.softmax.js')+'');
 eval(fs.readFileSync('dracula.tokenize.js')+'');
 eval(fs.readFileSync('dracula.js')+'');
 
  module.exports = {
-    analyse: function(string) {
+    analyze: function(string) {
         return dracula(string, false);
     }
 }

@@ -34,14 +34,18 @@ function dracula(content, visualize) {
   }
 
   var lstmOutput = lstmOutput1;
-
   // Mean-pooling
   var meanOutput = [];
   for (var i = 0; i < lstmOutput.length; i++) {
     if (lengths[i] == 0) break;
-    var cur = new Array(32).fill(0);
-    var max = new Array(32).fill(-Number.MAX_VALUE);
-    var min = new Array(32).fill(Number.MAX_VALUE);
+    var cur = [];
+    var min = [];
+    var max = [];
+    for (var j = 0; j < 32; j++) {
+        cur.push(0);
+        max.push(-Number.MAX_VALUE);
+        min.push(Number.MAX_VALUE);
+    }
     for (var j = 0; j < lengths[i]; j++) {
       cur = numeric.add(cur, lstmOutput[i][j]);
       max = numeric.max(max, lstmOutput[i][j]);
@@ -65,7 +69,10 @@ function dracula(content, visualize) {
       visualize2DActivation(lstmWords, "lstm-words-"+i, "Word-level LSTM")
   }
 
-  var finalPool = new Array(96).fill(0);
+  var finalPool = [];
+  for (var i = 0; i < 96; i++) {
+    finalPool.push(0);
+  }
   for (var i = 0; i < lstmWords.length; i++) {
     finalPool = numeric.add(finalPool, lstmWords[i]);
   }
@@ -80,6 +87,6 @@ function dracula(content, visualize) {
   if (visualize) {
     visualize2DActivation(probs, "probs-plot", "Softmax");
   }
-  return determineLabels(probs);
+  output = determineLabels(probs);
   return output.join(', ');
 }

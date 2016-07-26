@@ -19,7 +19,10 @@ function draculaGetEmbeddings(word, length) {
   }
 
   for (var i = ret.length; i < length; i++) {
-    ret.push(new Array(32).fill(0));
+    var r = [];
+    // Change from browser version: ES6 is messy
+    for (var i = 0; i < 32; i++) r.push(0);
+    ret.push(r);
   }
 
   return ret;
