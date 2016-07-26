@@ -14,6 +14,7 @@ function dracula(content, visualize) {
     if (maxOffset < l) l = maxOffset;
     lengths.push(l);
   }
+  
   for (var i = embeddings.length; i < 47; i++) {
     lengths.push(0);
   }
@@ -77,7 +78,6 @@ function dracula(content, visualize) {
     finalPool = numeric.add(finalPool, lstmWords[i]);
   }
   finalPool = numeric.div(finalPool, lstmWords.length)
-
   if (visualize) {
     visualize2DActivation([finalPool], "mean-pooling-plot", "Mean-pooling");
   }

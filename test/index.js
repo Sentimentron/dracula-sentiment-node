@@ -10,4 +10,8 @@ describe('#analyze', function() {
     it('Should think "puppies" are good news', function() {
         analyze('puppies').should.equal("positive");
     });
+
+    it('Should be able to pick up on this negativity here', function() {
+        analyze('he\'s been saying really negative things about me').should.equal("negative");
+    });
 });

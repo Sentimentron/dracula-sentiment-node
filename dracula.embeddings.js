@@ -14,14 +14,13 @@ function draculaGetEmbeddings(word, length) {
     else {
       character = draculaParams_char_dict[character];
     }
-//    ret[i] = draculaParams_Cemb[character];
     ret.push(draculaParams_Cemb[character]);
   }
 
   for (var i = ret.length; i < length; i++) {
     var r = [];
     // Change from browser version: ES6 is messy
-    for (var i = 0; i < 32; i++) r.push(0);
+    for (var j = 0; j < 32; j++) r.push(0);
     ret.push(r);
   }
 
