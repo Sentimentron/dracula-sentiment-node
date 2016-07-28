@@ -16,7 +16,8 @@
     "polarity classification",
     "machine learning",
     "natural language processing",
-    "NLP"
+    "NLP",
+    "sentiment"
   ],
   "author": "Richard Townsend <richard@sentimentron.co.uk>",
   "license": "BSD-3-Clause",
