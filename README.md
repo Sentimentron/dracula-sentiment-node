@@ -7,6 +7,8 @@
 
 [Try a live web demo &raquo;](http://dracula.sentimentron.co.uk/sentiment-demo/)
 
+[View on npm &raquo;](https://www.npmjs.com/package/dracula-sentiment)
+
 A quick way to get "good enough" sentiment analysis into your applications, this package uses character and word-level embeddings and LSTM networks to decide if a given text is either "positive" or "negative".
 
 ## Installation
