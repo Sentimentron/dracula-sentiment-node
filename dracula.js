@@ -1,5 +1,5 @@
 // This is the core function, used by everything
-function dracula(content) {
+function draculaScores(content) {
   // Tokenize
   var tokens = draculaTokenize(content);
   // Create embeddings
@@ -66,6 +66,11 @@ function dracula(content) {
 
   // Output
   var probs = draculaSoftmax([finalPool]);
-  output = determineLabels(probs);
+  return probs;
+}
+
+function dracula(content) {
+  var probs = draculaScores(content);
+  var output = determineLabels(probs);
   return output.join(', ');
 }

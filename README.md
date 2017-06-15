@@ -19,7 +19,10 @@ A quick way to get "good enough" sentiment analysis into your applications, this
     
     var dracula = require('dracula-sentiment');
     var text = "xoxo cant wait";
+    // Output a 'positive', 'negative', or 'neutral' label
     console.log(text, dracula.analyze(text));
+    // To output a [negative, neutral, positive] float array
+    console.log(text, dracula.score(text));
 
 For best performance and accuracy, remove any non-ascii characters by converting them to their closest equivalents via [`unidecode`](https://www.npmjs.com/package/unidecode) or something similar, and feed it sentence-sized chunks of text. 
 
