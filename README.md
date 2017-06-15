@@ -38,3 +38,5 @@ If you encounter any sentences where the classification is obviously wrong, open
 
 ## Release
 * 1.0.0 Original release
+* 1.1.0 Adds a new function to get the underlying scores
+* 1.1.1 Documentation and npm package updates
